@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
-    <link rel="stylesheet" href="/styles/style.css">
-</head>
-<body ng-controller="HomeCtrl">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      // TODO: Replace with your project's customized code snippet
-      var config = {
-        apiKey: "AIzaSyDTly2I21umcxHs9_gZvoPdraCQ8rlgd_k",
-        authDomain: "bloc-chat-46821.firebaseapp.com",
-        databaseURL: "https://bloc-chat-46821.firebaseio.com",
-        storageBucket: "bloc-chat-46821.appspot.com",
-      };
-      firebase.initializeApp(config);
-    </script>
-    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-    <script src="/scripts/app.js"></script>
-    <script src="/scripts/controllers/HomeCtrl.js"></script>
-    <script src="/scripts/services/Room.js"></script>
-</body>
+<html ng-app="blocChat">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Bloc Base Project</title>
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+    <body ng-controller="HomeCtrl">
+        
+        <ui-view></ui-view>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          // TODO: Replace with your project's customized code snippet
+          var config = {
+            apiKey: "AIzaSyDTly2I21umcxHs9_gZvoPdraCQ8rlgd_k",
+            authDomain: "bloc-chat-46821.firebaseapp.com",
+            databaseURL: "https://bloc-chat-46821.firebaseio.com",
+            storageBucket: "bloc-chat-46821.appspot.com",
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/controllers/HomeCtrl.js"></script>
+        <script src="/scripts/services/Room.js"></script>
+    </body>
 </html>
