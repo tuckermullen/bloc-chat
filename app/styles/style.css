@@ -1,3 +1,44 @@
-.chat-room-names {
+.jumbotron {
+    margin: 0;
+}
+
+.jumbotron #home-title {
+    text-align: center;
+}
+
+.jumbotron #home-tagline {
+    text-align: center;
+}
+
+.new-chat-button {
+    margin-bottom: 5px;
+}
+
+.sidebar {
     background-color: gray;
+    height: 1000px;
+}
+
+.sidebar .header {
+    margin: auto;
+    padding-top: 15px;
+}
+
+.sidebar .header .title {
+    text-align: center;
+    font-size: 20px;
+}
+
+.sidebar .header .new-chat-room {
+    text-align: center;
+}
+
+.sidebar .rooms-list {
+    text-align: center;
+}
+
+.chatroom {
+    background-color: whitesmoke;
+    height: 1000px;
+    float: right;
 }
