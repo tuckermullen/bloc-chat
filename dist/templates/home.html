@@ -1,3 +1,30 @@
+<div class="container-fluid">
 <h1>Bloc Chat</h1>
-
-<div ng-repeat="room in home.rooms"></div>
+    
+    <div class="row">
+        <div class="col-md-4 chat-room-names">
+            <div ng-controller="ModuleCtrl as module">
+                <script type="text/ng-template" id="myModalContent.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <input type="text" ng-model="home.chatName">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button" ng-click="module.addRoom(home.chatName)">OK</button>
+                        <button class="btn btn-warning" type="button" ng-click="module.close()">Cancel</button>
+                    </div>
+                </script>
+            <button class="btn btn-primary" type="button" ng-click="module.open()">OK</button>
+            </div>
+            
+            <div ng-repeat="room in home.roomData.all">
+                <p>{{ room.name }}</p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            Messages Area
+        </div>
+    </div>
+</div>
