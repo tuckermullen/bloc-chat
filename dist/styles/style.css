@@ -42,3 +42,13 @@
     height: 1000px;
     float: right;
 }
+
+.chatrooms a {
+    text-decoration: none;
+    color: white;
+}
+
+.chatrooms a:hover {
+    text-decoration: none;
+    color: #286090;
+}

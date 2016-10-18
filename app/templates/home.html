@@ -7,11 +7,16 @@
     <div class="header">
         <div class="new-chat-room">
             <div ng-controller="ModuleCtrl as module">
+                
             <p class="title"><strong>Chat Rooms</strong></p>
                 <button class="btn btn-primary new-chat-button" type="button" ng-click="module.open()"><strong>+ </strong>New Chat Room</button>
-                <div class="rooms-list" ng-repeat="room in home.roomData.all">
-                    <p>{{ room.name }}</p>
+                
+                <div class="rooms-list">
+                    <div ng-repeat="room in home.roomData.all" class="chatrooms">
+                        <a ng-click="home.selectRoom(room)">{{ room.name }}</a>
+                    </div>
                 </div>
+                
                 <script type="text/ng-template" id="myModalContent.html">
                     <div class="modal-header">
                         <h3 class="modal-title" id="modal-title">Create A New Chatroom</h3>
@@ -30,5 +35,8 @@
 </div>
 
 <div class="col-md-9 chatroom">
-    <h3>Messages Area</h3>
+    <h3>{{ room.selectedRoom.name }}</h3>
+    <p ng-repeat="message in room.messages">
+        {{ message.username }}: {{ message.content }}
+    </p>
 </div>
