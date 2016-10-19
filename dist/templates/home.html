@@ -37,6 +37,8 @@
 <div class="col-md-9 chatroom">
     <h3>{{ home.selectedRoom.name }}</h3>
     <p ng-repeat="message in home.roomData.messages">
-        {{ message }}
+        <strong>{{ message.username }}:</strong> {{ message.content }}
+        <br />
+        Sent: {{ message.sentAt }}
     </p>
 </div>

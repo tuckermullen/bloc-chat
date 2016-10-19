@@ -11,7 +11,7 @@
           },
           messages: [],
           getMessages: function(roomId) {
-            var messages = $firebaseArray(messagesRef);
+            this.messages = $firebaseArray(messagesRef);
         }
     };
   }
