@@ -6,7 +6,7 @@
         }
         this.selectRoom = function(room) {
             this.selectedRoom = room;
-            this.messages = Room.getMessages(this.selectedRoom.$id);
+            this.messages = this.roomData.getMessages(this.selectedRoom.$id);
         }
     }
     
