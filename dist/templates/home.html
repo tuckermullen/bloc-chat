@@ -8,7 +8,7 @@
         <div class="new-chat-room">
             <div ng-controller="ModuleCtrl as module">
                 
-            <p class="title"><strong>Chat Rooms</strong></p>
+            <p class="title"><strong>Available Chat Rooms</strong></p>
                 <button class="btn btn-primary new-chat-button" type="button" ng-click="module.open()"><strong>+ </strong>New Chat Room</button>
                 
                 <div class="rooms-list">
@@ -35,15 +35,19 @@
 </div>
 
 <div class="col-md-9 chatroom">
-    <h3>{{ home.selectedRoom.name }}</h3>
-    <p ng-repeat="message in home.roomData.messages">
-        <strong>{{ message.username }}</strong> {{ message.sentAt }}: {{ message.content }}
-    </p>
-    
-    <form>
-        <div class="col-md-8 message-input">
-            <input type="text" placeholder="Type your message here:" class="form-control" ng-model="this.newMessage">
-        </div>
-        <button class="col-md-1 btn btn-success" type="button" ng-click="this.sendMessage()">Send</button>
-    </form>
+    <div ng-if="!home.selectedRoom">
+        <h4>Select or Create a Room To Chat.</h4>
+    </div>
+    <div ng-if="home.selectedRoom">
+        <h3>{{ home.selectedRoom.name }}</h3>
+    </div>
+    <div ng-repeat="message in home.roomData.messages">
+        <h5><strong>{{ message.username }}:</strong> {{ message.content }} ({{ message.sentAt }})</h5>
+    </div>
+    <div class="new-msg-box">
+        <form>
+            <input type="text" placeholder="Type your message here:" class="new-msg-input" ng-model="home.newMessage">
+            <button type="submit" class="new-msg-button btn btn-primary relative-button-height" ng-click="home.sendMessage()">Send</button>
+        </form>
+    </div>
 </div>

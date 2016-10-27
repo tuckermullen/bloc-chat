@@ -1,6 +1,7 @@
 (function() {
     function HomeCtrl(Room, Message) {
         this.roomData = Room;
+        this.messageData = Message;
         this.addRoom = function(chatRoomName) {
             this.roomData.add(chatRoomName)
         }
@@ -10,7 +11,7 @@
         }
         
         this.sendMessage = function() {
-            Message.send(this.newMessage, this.selectedRoom.$id);
+            this.messageData.send(this.newMessage, this.selectedRoom.$id);
             this.newMessage = '';
         }
     }
