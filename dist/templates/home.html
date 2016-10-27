@@ -37,8 +37,13 @@
 <div class="col-md-9 chatroom">
     <h3>{{ home.selectedRoom.name }}</h3>
     <p ng-repeat="message in home.roomData.messages">
-        <strong>{{ message.username }}:</strong> {{ message.content }}
-        <br />
-        Sent: {{ message.sentAt }}
+        <strong>{{ message.username }}</strong> {{ message.sentAt }}: {{ message.content }}
     </p>
+    
+    <form>
+        <div class="col-md-8 message-input">
+            <input type="text" placeholder="Type your message here:" class="form-control" ng-model="this.newMessage">
+        </div>
+        <button class="col-md-1 btn btn-success" type="button" ng-click="this.sendMessage()">Send</button>
+    </form>
 </div>
