@@ -1,5 +1,7 @@
 var Hapi = require('hapi'),
     path = require('path'),
+    express = require('express'),
+    app = express(),
     port = process.env.PORT || 3000,
     server = new Hapi.Server(port),
     routes = {
@@ -31,6 +33,9 @@ var Hapi = require('hapi'),
             }
         }
     };
+
+app.use(express.static(__dirname));
+app.listen(port);
 
 server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa ]);
 server.start( onServerStarted );
